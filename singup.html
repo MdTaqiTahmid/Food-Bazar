@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Bazar Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-gray-800/30 p-8 rounded-2xl backdrop-blur-xl shadow-xl border border-gray-700/50">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Food Bazar
+            </h1>
+            <p class="text-gray-400 mt-2">Join our community today</p>
+        </div>
+
+        <!-- Sign Up Form -->
+        <form class="space-y-6">
+            <!-- Name Fields -->
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-gray-300 mb-2 text-sm" for="firstName">First Name</label>
+                    <input 
+                        type="text" 
+                        id="firstName"
+                        class="w-full px-4 py-3 bg-gray-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-200"
+                        placeholder="Enter  your first name"
+                    >
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-2 text-sm" for="lastName">Last Name</label>
+                    <input 
+                        type="text" 
+                        id="lastName"
+                        class="w-full px-4 py-3 bg-gray-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-200"
+                        placeholder="Enter your last name"
+                    >
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label class="block text-gray-300 mb-2 text-sm" for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email"
+                    class="w-full px-4 py-3 bg-gray-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-200"
+                    placeholder="john@example.com"
+                >
+            </div>
+
+            <!-- Password Input -->
+            <div>
+                <label class="block text-gray-300 mb-2 text-sm" for="password">Password</label>
+                <div class="relative">
+                    <input 
+                        type="password" 
+                        id="password"
+                        class="w-full px-4 py-3 bg-gray-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-200"
+                        placeholder="••••••••"
+                    >
+                    <button 
+                        type="button"
+                        onclick="togglePassword('password')"
+                        class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-300"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Password Strength Indicator -->
+                <div class="mt-2 space-y-2">
+                    <div class="flex gap-2">
+                        <div class="h-1 flex-1 rounded-full bg-gray-700" id="strength-1"></div>
+                        <div class="h-1 flex-1 rounded-full bg-gray-700" id="strength-2"></div>
+                        <div class="h-1 flex-1 rounded-full bg-gray-700" id="strength-3"></div>
+                        <div class="h-1 flex-1 rounded-full bg-gray-700" id="strength-4"></div>
+                    </div>
+                    <p class="text-xs text-gray-400" id="strength-text">Password strength</p>
+                </div>
+
+                <!-- Password Requirements -->
+                <div class="mt-3 grid grid-cols-2 gap-2">
+                    <div class="text-xs text-gray-400" id="length">
+                        <span class="inline-block w-4">○</span> 8+ characters
+                    </div>
+                    <div class="text-xs text-gray-400" id="uppercase">
+                        <span class="inline-block w-4">○</span> Uppercase
+                    </div>
+                    <div class="text-xs text-gray-400" id="lowercase">
+                        <span class="inline-block w-4">○</span> Lowercase
+                    </div>
+                    <div class="text-xs text-gray-400" id="number">
+                        <span class="inline-block w-4">○</span> Number
+                    </div>
+                    <div class="text-xs text-gray-400" id="special">
+                        <span class="inline-block w-4">○</span> Special char
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terms -->
+            <div class="flex items-start space-x-2">
+                <input type="checkbox" class="mt-1 rounded bg-gray-700/30 border-gray-600 text-blue-500 focus:ring-blue-500">
+                <label class="text-sm text-gray-400">
+                    I agree to the 
+                    <a href="#" class="text-blue-500 hover:text-blue-400">Terms</a>
+                    and
+                    <a href="#" class="text-blue-500 hover:text-blue-400">Privacy Policy</a>
+                </label>
+            </div>
+           
+            <!-- Sign Up Button -->
+            <button class="flex justify-center ">
+            <a href="http://127.0.0.1:5500/mine.html" class=" w-[400px] py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:opacity-90 transition-all duration-200 transform hover:scale-[1.02]" type="submit">Create Account</a>
+            </button>
+        
+            <!-- Social Sign Up -->
+            <div class="relative my-6">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-600/50"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-2 bg-gray-800/30 text-gray-400">Or continue with</span>
+                </div>
+            </div>
+
+            <!-- Social Buttons -->
+            <div class="grid grid-cols-2 gap-4">
+                <button class="flex items-center justify-center px-4 py-2 border border-gray-600 rounded-lg hover:bg-gray-700/50 transition-colors" id="chatToggleButton">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5">
+                </button>
+                <div class="text-center  absolute min-w-full bg-gray-800 backdrop-blur-xl top-12 h-96 left-0.5 rounded-2xl shadow-xl hidden" id="chatBox">
+                    <!-- Error Image -->
+                     <div class="absolute right-1 top- px-2 py-2  text-purple-500 hover:bg-purple-500 rounded-tr-2xl hover:text-black " id="chatCloseButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                      </svg>
+                      </div>
+    
+                    <div class="mb-4 animate-bounce mt-14" >
+                        <svg class="w-32 h-32 mx-auto text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                    </div>
+            
+                    <!-- Error Message -->
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 py-1">No Updates <p class="pt-2"> Available</p> </h1>
+                    
+                </div>
+
+                <!-- Background Decoration -->
+                <div class="fixed inset-0 -z-10 overflow-hidden">
+                    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
+                </div>
+                <script>
+                    const chatToggleButton = document.getElementById('chatToggleButton');
+                   const chatBox = document.getElementById('chatBox');
+                   const chatCloseButton = document.getElementById('chatCloseButton');
+               
+                   // Toggle chat box
+               chatToggleButton.addEventListener('click', () => {
+               chatBox.classList.toggle('hidden');
+               })
+               // Close chat box
+               chatCloseButton.addEventListener('click', () => {
+               chatBox.classList.add('hidden');
+               });
+               </script>
+                <button class="flex items-center justify-center px-4 py-2 border border-gray-600 rounded-lg hover:bg-gray-700/50 transition-colors" id="chatToggleButto">
+                    <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook" class="w-5 h-5">
+                </button>
+
+                    <div class="text-center  absolute min-w-full bg-gray-800 backdrop-blur-xl top-12 h-96 left-0.5 rounded-2xl shadow-xl hidden" id="chatBo">
+                        <!-- Error Image -->
+                         <div class="absolute right-1 top- px-2 py-2  text-purple-500 hover:bg-purple-500 rounded-tr-2xl hover:text-black " id="chatCloseButto">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                          </svg>
+                          </div>
+        
+                        <div class="mb-4 animate-bounce mt-14" >
+                            <svg class="w-32 h-32 mx-auto text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                            </svg>
+                        </div>
+                
+                        <!-- Error Message -->
+                        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 py-1">No Updates <p class="pt-2"> Available</p> </h1>
+                        
+                    </div>
+    
+                    <!-- Background Decoration -->
+                    <div class="fixed inset-0 -z-10 overflow-hidden">
+                        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+                        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
+                    </div>
+            </div>
+
+            <script>
+                const chatToggleButto = document.getElementById('chatToggleButto');
+               const chatBo = document.getElementById('chatBo');
+               const chatCloseButto = document.getElementById('chatCloseButto');
+           
+               // Toggle chat box
+           chatToggleButto.addEventListener('click', () => {
+           chatBo.classList.toggle('hidden');
+           })
+           // Close chat box
+           chatCloseButto.addEventListener('click', () => {
+           chatBo.classList.add('hidden');
+           });
+           </script>
+
+            <!-- Login Link -->
+            <p class="text-center text-gray-400 text-sm">
+                Already have an account? 
+                <a href="http://127.0.0.1:5500/login.html?#" class="text-purple-500 hover:text-purple-400">Log in</a>
+            </p>
+            <div class="border-t border-gray-700/50 mt-2 pt- text-center text-gray-400 ">
+                <p>&copy; 2025 devlop by taqi tahmid.</p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+
+        const passwordInput = document.getElementById('password');
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            
+            const requirements = {
+                length: password.length >= 8,
+                uppercase: /[A-Z]/.test(password),
+                lowercase: /[a-z]/.test(password),
+                number: /[0-9]/.test(password),
+                special: /[^A-Za-z0-9]/.test(password)
+            };
+
+            Object.keys(requirements).forEach(req => {
+                const element = document.getElementById(req);
+                if (requirements[req]) {
+                    element.classList.remove('text-gray-400');
+                    element.classList.add('text-green-500');
+                    element.querySelector('span').textContent = '●';
+                } else {
+                    element.classList.remove('text-green-500');
+                    element.classList.add('text-gray-400');
+                    element.querySelector('span').textContent = '○';
+                }
+            });
+
+            const strength = Object.values(requirements).filter(Boolean).length;
+            const strengthBars = [
+                document.getElementById('strength-1'),
+                document.getElementById('strength-2'),
+                document.getElementById('strength-3'),
+                document.getElementById('strength-4')
+            ];
+
+            strengthBars.forEach((bar, index) => {
+                if (index < strength) {
+                    bar.className = `h-1 flex-1 rounded-full ${
+                        strength === 1 ? 'bg-red-500' :
+                        strength === 2 ? 'bg-orange-500' :
+                        strength === 3 ? 'bg-yellow-500' :
+                        'bg-green-500'
+                    }`;
+                } else {
+                    bar.className = 'h-1 flex-1 rounded-full bg-gray-700';
+                }
+            });
+
+            const strengthText = document.getElementById('strength-text');
+            strengthText.textContent = password.length === 0 ? 'Password strength' :
+                strength === 1 ? 'Weak' :
+                strength === 2 ? 'Fair' :
+                strength === 3 ? 'Good' :
+                strength === 4 ? 'Strong' :
+                'Very Strong';
+        });
+    </script>
+    
+
+</body>
+</html>
